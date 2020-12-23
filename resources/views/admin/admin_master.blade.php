@@ -195,9 +195,9 @@
                 &copy; <span id="copy-year">2019</span> Copyright Sleek Dashboard Bootstrap Template by
                 <a
                   class="text-primary"
-                  href="http://www.iamabdus.com/"
+                  href="http://www.github.com/arman77262"
                   target="_blank"
-                  >Abdus</a
+                  >Arman Hossain</a
                 >.
               </p>
             </div>
