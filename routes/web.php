@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MultipicController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
@@ -45,3 +46,9 @@ Route::get('brand/delete/{id}',[BrandController::class, 'DeleteBrand']);
 Route::get('multi/images',[BrandController::class, 'MultiPic'])->name('multi.images');
 Route::post('store/images', [BrandController::class, 'StoreImages'])->name('store.images');
 Route::get('user/logout', [BrandController::class, 'logout'])->name('user.logout');
+
+//All Home Route
+Route::get('/home/slider', [HomeController::class, 'homeSlider'])->name('home.slider');
+Route::get('add/slider', [HomeController::class, 'addSlider'])->name('add.slider');
+Route::post('add/slider', [HomeController::class, 'storeSlider'])->name('store.slider');
+
