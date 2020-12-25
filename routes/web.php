@@ -51,4 +51,6 @@ Route::get('user/logout', [BrandController::class, 'logout'])->name('user.logout
 Route::get('/home/slider', [HomeController::class, 'homeSlider'])->name('home.slider');
 Route::get('add/slider', [HomeController::class, 'addSlider'])->name('add.slider');
 Route::post('add/slider', [HomeController::class, 'storeSlider'])->name('store.slider');
+Route::get('slider/edit/{id}', [HomeController::class, 'EditSlider']);
+Route::post('update/slider/{id}', [HomeController::class, 'UpdateSlider']);
 
