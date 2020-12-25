@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function homeSlider(){
         $sliders = Slider::latest()->get();
         return view('admin.slider.index', compact('sliders'));
@@ -32,12 +40,16 @@ class HomeController extends Controller
 
         $image = $request->file('image');
 
-        $name_gen = hexdec(uniqid());
+        /* $name_gen = hexdec(uniqid());
         $img_ext = strtolower($image->getClientOriginalExtension());
         $image_name = $name_gen.'.'.$img_ext;
         $up_location = 'images/slider/';
         $last_image = $up_location.$image_name;
-        $image->move($up_location, $last_image);
+        $image->move($up_location, $last_image); */
+
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        image::make($image)->resize(1920,1088)->save('images/slider/'.$name_gen);
+        $last_image = 'images/slider/'.$name_gen;
 
         Slider::insert([
             'title' => $request->title,
