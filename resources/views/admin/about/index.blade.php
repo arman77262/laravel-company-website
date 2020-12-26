@@ -59,7 +59,7 @@
                                     <tr>
                                         <td>{{$i++}}</td>
                                         <td>{{$about->title}}</td>
-                                        <td style="width: 300px; text-align:justify;">{{$about->short_dis}}</td>
+                                        <td style="width: 250px; text-align:justify;">{{$about->short_dis}}</td>
                                         <td style="width: 300px; text-align:justify;">{{$about->long_dis}}</td>
 
                                         {{-- <td>{{$item->name}}</td> --}}
@@ -92,5 +92,7 @@
 {{-- </x-app-layout> --}}
 
 @endsection
+
+
 
 
