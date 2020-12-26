@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
@@ -54,4 +55,11 @@ Route::post('add/slider', [HomeController::class, 'storeSlider'])->name('store.s
 Route::get('slider/edit/{id}', [HomeController::class, 'EditSlider']);
 Route::post('update/slider/{id}', [HomeController::class, 'UpdateSlider']);
 Route::get('slider/delete/{id}', [HomeController::class, 'DeleteSlider']);
+
+//All Home About Route
+Route::get('home/about',[AboutController::class, 'index'])->name('home.about');
+Route::get('add/home/about', [AboutController::class, 'addAbout'])->name('add.about');
+Route::post('store/home/about', [AboutController::class, 'storeAbout'])->name('store.about');
+Route::get('about/edit/{id}', [AboutController::class, 'EditAbout']);
+Route::post('update/about/{id}', [AboutController::class, 'UpdateAbout']);
 
