@@ -149,17 +149,21 @@
 
       <div class="row portfolio-container" data-aos="fade-up">
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <img src="{{asset('front/assets/img/portfolio/portfolio-1.jpg')}}" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h4>App 1</h4>
-            <p>App</p>
-            <a href="{{asset('front/assets/img/portfolio/portfolio-1.jpg')}}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        @foreach ($images as $image)
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-card filter-web">
+            <img src="{{asset($image->image)}}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 1</h4>
+              <p>App</p>
+              <a href="{{asset($image->image)}}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
           </div>
-        </div>
+        @endforeach
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+
+
+       {{--  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <img src="{{asset('front/assets/img/portfolio/portfolio-2.jpg')}}" class="img-fluid" alt="">
           <div class="portfolio-info">
             <h4>Web 3</h4>
@@ -237,7 +241,7 @@
             <a href="{{asset('front/assets/img/portfolio/portfolio-9.jpg')}}" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
             <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
           </div>
-        </div>
+        </div> --}}
 
       </div>
 

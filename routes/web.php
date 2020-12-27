@@ -19,7 +19,8 @@ Route::get('/', function () {
     $brands = DB::table('brands')->get();
     $abouts = DB::table('home_abouts')->first();
     $services = DB::table('services')->get();
-    return view('home', compact('brands','abouts','services'));
+    $images = DB::table('multipics')->get();
+    return view('home', compact('brands','abouts','services','images'));
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -49,6 +50,7 @@ Route::get('brand/delete/{id}',[BrandController::class, 'DeleteBrand']);
 //multi images
 Route::get('multi/images',[BrandController::class, 'MultiPic'])->name('multi.images');
 Route::post('store/images', [BrandController::class, 'StoreImages'])->name('store.images');
+Route::get('multipic/delete/{id}', [BrandController::class, 'MultipicDelete']);
 Route::get('user/logout', [BrandController::class, 'logout'])->name('user.logout');
 
 //All Home Route

@@ -129,6 +129,15 @@ class BrandController extends Controller
 
     }
 
+    public function MultipicDelete($id){
+        $images = Multipic::find($id);
+        $old_images = $images->image;
+        unlink($old_images);
+
+        Multipic::find($id)->delete();
+        return redirect()->back()->with('success','Picture Delete Successfully');
+    }
+
     public function logout(){
         Auth::logout();
         return redirect()->route('login');
