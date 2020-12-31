@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MultipicController;
 use App\Http\Controllers\ServiceController;
@@ -76,3 +77,9 @@ Route::post('store/services', [ServiceController::class, 'storeService'])->name(
 Route::get('service/edit/{id}', [ServiceController::class, 'EditService']);
 Route::post('update/service/{id}', [ServiceController::class, 'UpdateService']);
 Route::get('service/delete/{id}', [ServiceController::class, 'DeleteService']);
+
+//portfolio pages route
+Route::get('/portfolio', [AboutController::class, 'Portfolio'])->name('portfolio');
+
+//Admin Contact
+Route::get('contact', [ContactController::class, 'AdminContact'])->name('contact');
