@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="card-header d-flex flex-row-reverse">
-                                        <a href="{{route('add.about')}}" class=""><button class="btn btn-sm btn-info">Add Contact</button></a>
+                                        <a href="{{route('add.contact')}}" class=""><button class="btn btn-sm btn-info">Add Contact</button></a>
                                     </div>
                                 </div>
                             </div>

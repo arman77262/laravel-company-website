@@ -83,3 +83,11 @@ Route::get('/portfolio', [AboutController::class, 'Portfolio'])->name('portfolio
 
 //Admin Contact
 Route::get('contact', [ContactController::class, 'AdminContact'])->name('contact');
+Route::get('add/contact', [ContactController::class, 'CreateContact'])->name('add.contact');
+Route::post('store/contact', [ContactController::class, 'StoreContact'])->name('store.contact');
+Route::get('contact/edit/{id}', [ContactController::class, 'EditContact']);
+Route::post('update/contact/{id}', [ContactController::class, 'UpdateContact']);
+Route::get('contact/delete/{id}', [ContactController::class, 'DeleteContact']);
+
+//forntend Contact View
+Route::get('Home/Contact', [ContactController::class, 'HomeContact'])->name('homecontact');
