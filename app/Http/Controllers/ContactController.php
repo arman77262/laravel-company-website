@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\ContactForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class ContactController extends Controller
 {
@@ -61,5 +63,26 @@ class ContactController extends Controller
     public function HomeContact(){
         $contact = DB::table('contacts')->first();
         return view('pages.contact', compact('contact'));
+    }
+
+    public function ContactMessage(Request $request){
+        ContactForm::insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message
+        ]);
+
+        return Redirect()->back()->with('success', 'Message Send Successfully');
+    }
+
+    public function Message(){
+        $messages= ContactForm::all();
+        return view('admin.contact.message', compact('messages'));
+    }
+
+    public function DeleteMessage($id){
+        $delete = ContactForm::find($id)->delete();
+        return Redirect()->back()->with('success', 'Message Delete Successfully');
     }
 }

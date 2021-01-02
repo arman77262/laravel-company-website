@@ -95,7 +95,7 @@
                         </a>
                     </li>
                     <li  class="active" >
-                        <a class="sidenav-item-link" href="{{route('all.brand')}}">
+                        <a class="sidenav-item-link" href="{{route('contactmessage')}}">
                             <span class="nav-text">Contact Massage</span>
                         </a>
                     </li>

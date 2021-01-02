@@ -88,6 +88,9 @@ Route::post('store/contact', [ContactController::class, 'StoreContact'])->name('
 Route::get('contact/edit/{id}', [ContactController::class, 'EditContact']);
 Route::post('update/contact/{id}', [ContactController::class, 'UpdateContact']);
 Route::get('contact/delete/{id}', [ContactController::class, 'DeleteContact']);
+Route::get('message/delete/{id}', [ContactController::class, 'DeleteMessage']);
+Route::get('contact/message', [ContactController::class, 'Message'])->name('contactmessage');
 
 //forntend Contact View
 Route::get('Home/Contact', [ContactController::class, 'HomeContact'])->name('homecontact');
+Route::post('contact/Message', [ContactController::class, 'ContactMessage'])->name('contact.message');
