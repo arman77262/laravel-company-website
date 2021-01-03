@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChangePass;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MultipicController;
@@ -94,3 +95,7 @@ Route::get('contact/message', [ContactController::class, 'Message'])->name('cont
 //forntend Contact View
 Route::get('Home/Contact', [ContactController::class, 'HomeContact'])->name('homecontact');
 Route::post('contact/Message', [ContactController::class, 'ContactMessage'])->name('contact.message');
+
+//admin user profile
+Route::get('user/password', [ChangePass::class, 'CPassword'])->name('change.password');
+Route::post('update/password', [ChangePass::class, 'UpdatePassword'])->name('password.update');
