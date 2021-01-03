@@ -2,6 +2,14 @@
 @section('admin')
 
 <div class="card card-default">
+
+    @if (session('error'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{session('error')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <div class="card-header card-header-border-bottom">
         <h2>Change Password</h2>
     </div>
