@@ -99,3 +99,6 @@ Route::post('contact/Message', [ContactController::class, 'ContactMessage'])->na
 //admin user profile
 Route::get('user/password', [ChangePass::class, 'CPassword'])->name('change.password');
 Route::post('update/password', [ChangePass::class, 'UpdatePassword'])->name('password.update');
+
+//update profile option
+Route::get('update/profile', [ChangePass::class, 'ProfileUpdate'])->name('profile.update');
