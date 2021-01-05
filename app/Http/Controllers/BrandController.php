@@ -53,7 +53,12 @@ class BrandController extends Controller
             'created_at' => Carbon::now(),
         ]);
 
-        return redirect()->back()->with('success','Brand Added Successfully');
+        $notification = array(
+            'message' => 'Brand Added Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
     }
 
     public function Edit($id){
@@ -104,7 +109,13 @@ class BrandController extends Controller
         unlink($old_image);
 
         Brand::find($id)->delete();
-        return redirect()->back()->with('success','Brand Delete Successfully');
+
+        $notification = array(
+            'message' => 'Brand Delete Successfully',
+            'alert-type' => 'warning'
+        );
+
+        return redirect()->back()->with($notification);
     }
 
     public function MultiPic(){
